@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"github.com/k8sgpt-ai/k8sgpt/cmd/serve"
 	"os"
 	"path/filepath"
 
@@ -54,6 +55,7 @@ func init() {
 	rootCmd.AddCommand(analyze.AnalyzeCmd)
 	rootCmd.AddCommand(filters.FiltersCmd)
 	rootCmd.AddCommand(generate.GenerateCmd)
+	rootCmd.AddCommand(serve.ServeCmd)
 	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.k8sgpt.yaml)")
 	rootCmd.PersistentFlags().StringVar(&kubecontext, "kubecontext", "", "Kubernetes context to use. Only required if out-of-cluster.")
 	rootCmd.PersistentFlags().StringVar(&kubeconfig, "kubeconfig", kubeconfigPath, "Path to a kubeconfig. Only required if out-of-cluster.")
